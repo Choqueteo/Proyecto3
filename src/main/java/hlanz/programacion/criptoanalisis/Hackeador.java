@@ -1,5 +1,7 @@
 package hlanz.programacion.criptoanalisis;
 
-public interface Hackeador {
+import hlanz.programacion.criptografia.general.Descifrador;
 
+public interface Hackeador extends Descifrador {
+    public abstract HackResult descrifrar(String texto);
 }
