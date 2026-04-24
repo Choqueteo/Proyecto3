@@ -12,7 +12,7 @@ repositories {
     mavenCentral()
 }
 application{
-    mainClass = "dam.tema8.Ejercicio5MVC"
+    mainClass = "hlanz.programacion.criptografia.gui.frmPrincipal"
 }
 javafx{
     modules("javafx.controls", "javafx.fxml")
