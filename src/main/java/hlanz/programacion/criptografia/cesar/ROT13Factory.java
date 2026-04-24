@@ -8,16 +8,16 @@ public class ROT13Factory implements CriptoGrafiaFactory {
 
     private ImplementacionROT13 rot13;
     public ROT13Factory(){
-
+        this.rot13 = new ImplementacionROT13();
     }
 
     @Override
     public Cifrador getCifrado() {
-        return null;
+        return this.rot13;
     }
 
     @Override
     public Descifrador getDescifrador() {
-        return null;
+        return this.rot13;
     }
 }
