@@ -25,7 +25,7 @@ public class ImplementacionCesar implements Descifrador, Cifrador {
                 }
             }else if(desplazamiento<=-1){
                 for (int i = 0;i>desplazamiento;i--){
-                    letraDesplazada-=i;
+                    letraDesplazada--;
                     if (letraDesplazada<'A'){
                         letraDesplazada='Z';
                     }
