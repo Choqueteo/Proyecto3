@@ -5,6 +5,11 @@ import hlanz.programacion.criptografia.general.CriptoGrafiaFactory;
 import hlanz.programacion.criptografia.general.Descifrador;
 
 public class CesarFactory implements CriptoGrafiaFactory {
+    private ImplementacionCesar cesar;
+    public CesarFactory(){
+
+    }
+
     @Override
     public Cifrador getCifrado() {
         return null;
