@@ -34,7 +34,7 @@ public class Idioma {
         return this.palabras.contains(palabra.toUpperCase());
     }
 
-    public boolean contieneFrase(String frase, double tolerancia) {
+    public boolean contieneFrase(String frase, int tolerancia) {
         if (tolerancia < 0 || tolerancia > 100) {
             throw new IllegalArgumentException("El porcentaje de tolerancia debe estar entre 0 y 100");
         }

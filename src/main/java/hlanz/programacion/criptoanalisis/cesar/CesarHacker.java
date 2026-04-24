@@ -1,8 +1,6 @@
 package hlanz.programacion.criptoanalisis.cesar;
 
-import hlanz.programacion.criptoanalisis.HackResult;
-import hlanz.programacion.criptoanalisis.Hackeador;
-import hlanz.programacion.criptoanalisis.Idioma;
+import hlanz.programacion.criptoanalisis.*;
 import hlanz.programacion.criptografia.cesar.CesarFactory;
 import hlanz.programacion.criptografia.cesar.ImplementacionCesar;
 import hlanz.programacion.criptografia.general.CriptoGrafiaFactory;
@@ -30,11 +28,26 @@ public class CesarHacker implements Hackeador {
     @Override
     public HackResult descrifrar(String texto) {
         Descifrador descifrador = new CesarFactory().getDescifrador();
-        for (int i = 0; i< 26; i++){
+        boolean finalizarBucle = true;
+        HackResult hackResult = null;
+        String claveFinal = null;
+        Idioma idioma = null;
+        for (int i = 0; i< 26 && finalizarBucle; i++){
             String clave = ""+i;
             String fraseDescifrada = descifrador.descifrar(texto, clave);
-
+            for (Idioma id : this.idiomasPosibles){
+                if (id.contieneFrase(fraseDescifrada, this.porcentajeTolerancia)){
+                    claveFinal = clave;
+                    finalizarBucle = false;
+                    idioma = id;
+                }
+            }
+            if (finalizarBucle){
+                hackResult = new HackFracaso("Idioma desconocido");
+            } else {
+                hackResult = new HackExito(texto, fraseDescifrada, claveFinal, idioma.getNombre());
+            }
         }
-        return null;
+        return hackResult;
     }
 }
