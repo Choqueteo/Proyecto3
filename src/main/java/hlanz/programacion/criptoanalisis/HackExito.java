@@ -1,4 +1,5 @@
 package hlanz.programacion.criptoanalisis;
 
-public class HackExito {
+public record HackExito( String textoCifrado,  String textoDescifrado,  String clave,  String idioma) implements HackResult {
+
 }
