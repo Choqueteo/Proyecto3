@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="hlanz.programacion.controladores.ControladorPrincipal"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hlanz.programacion.controladores.ControladorPrincipal">
+   <children>
+      <Label text="Elige la operación que deseas realizar">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </Label>
+      <RadioButton fx:id="optCriptografia" mnemonicParsing="false" text="Cifrar o descifrar un mensaje">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </RadioButton>
+      <RadioButton fx:id="optCriptoanalisis" mnemonicParsing="false" text="Hackear un mensaje cifrado">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
+      </RadioButton>
+      <Button fx:id="btnAceptar" alignment="CENTER_RIGHT" mnemonicParsing="false" text="Aceptar" textAlignment="JUSTIFY">
+         <VBox.margin>
+            <Insets left="520.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
